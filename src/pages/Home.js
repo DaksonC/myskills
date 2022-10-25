@@ -3,7 +3,7 @@ import {
   View, 
   Text, 
   TextInput, 
-  TouchableOpacity
+  FlatList,
 } from 'react-native';
 import { styles } from '../styles';
 import { ButtonAdd } from '../components/ButtonAdd';
@@ -30,11 +30,13 @@ export const Home = () => {
       <Text style={[styles.title, { marginVertical: 40 }]}>
         My Skills
       </Text>
-      { 
-        mySkills.map(skill => (
-          <SkillCard key={skill} skill={skill} />
-        ))
-      }
+      <FlatList 
+        data={mySkills}
+        keyExtractor={item => item}
+        renderItem={({ item }) => (
+          <SkillCard skill={item} />
+        )}
+      />         
     </View>
   );
 }
