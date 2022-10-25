@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { 
-  StyleSheet, 
   View, 
   Text, 
   TextInput, 
-  Platform,
   TouchableOpacity
 } from 'react-native';
+import { styles } from '../styles';
+import { ButtonAdd } from '../components/ButtonAdd';
+import { SkillCard } from '../components/SkillCard';
 
 export const Home = () => {
   const [newSkill, setNewSkill] = useState('');
@@ -25,74 +26,16 @@ export const Home = () => {
         placeholderTextColor="#555"
         onChangeText={setNewSkill}
       />
-      <TouchableOpacity 
-        style={styles.button}
-        activeOpacity={0.6}
-        onPress={handleAddNewSkill}
-      >
-        <Text style={styles.buttonText}>Add</Text>
-      </TouchableOpacity>
-      <Text
-        style={[styles.title, { marginVertical: 40 }]}
-      >
+      <ButtonAdd onPress={handleAddNewSkill}/>
+      <Text style={[styles.title, { marginVertical: 40 }]}>
         My Skills
       </Text>
-      { mySkills.map(skill => (
-        <TouchableOpacity
-          key={skill} 
-          style={styles.buttonSkill}
-        >
-          <Text style={styles.textSkill}>
-            {skill}
-          </Text>
-        </TouchableOpacity>
-      ))}
+      { 
+        mySkills.map(skill => (
+          <SkillCard key={skill} skill={skill} />
+        ))
+      }
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#121015',
-    paddingHorizontal: 30,
-    paddingVertical: 70,
-  },
-  title: {
-    color: '#FFF',
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  input: {
-    backgroundColor: '#1F1E25',
-    color: '#FFF',
-    fontSize: 18,
-    marginTop: 30,
-    padding: Platform.OS === 'ios' ? 15 :  10,
-    borderRadius: 7,
-  },
-  button: {
-    backgroundColor: '#A370F7',
-    padding: 15,
-    borderRadius: 7,
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  buttonText: {
-    color: '#FFF',
-    fontSize: 17,
-    fontWeight: 'bold',
-  },
-  buttonSkill: {
-    backgroundColor: '#1F1E25',
-    padding: 15,
-    borderRadius: 50,
-    alignItems: 'center',
-    marginVertical: 10,
-  },
-  textSkill: {
-    color: '#FFF',
-    fontSize: 22,
-    fontWeight: 'bold',
-  }
-});
