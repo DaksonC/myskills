@@ -43,5 +43,8 @@ export const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 22,
     fontWeight: 'bold',
-  }
+  },
+  greetings: {
+    color: '#A370F7',
+  },
 });
