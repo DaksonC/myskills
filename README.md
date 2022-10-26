@@ -1,18 +1,20 @@
 # myskills
 Projeto do curso React-Native da Rocketseat do Ignite Chapter I
 
-## Instalação e execução do projeto
+## Instalação e execução do projeto  
+-          git clone https://github.com/DaksonC/myskills.git
+-          cd myskills
   
--          git clone https://github.com/DaksonC/imhere.git
--          cd imhere
   Ambiente Windows
 -          yarn android
 ou
 -          react-native run-android
+  
   Ambiente iOS  
 -          yarn ios
 ou
 -          react-native run-ios
+  
   Ambiente Linux 
 -          yarn start
 ou
