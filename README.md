@@ -5,17 +5,17 @@ Projeto do curso React-Native da Rocketseat do Ignite Chapter I
 -          git clone https://github.com/DaksonC/myskills.git
 -          cd myskills
   
-  Ambiente Windows
+ ## Ambiente Windows
 -          yarn android
 ou
 -          react-native run-android
   
-  Ambiente iOS  
+ ## Ambiente iOS  
 -          yarn ios
 ou
 -          react-native run-ios
   
-  Ambiente Linux 
+ ## Ambiente Linux 
 -          yarn start
 ou
 -          react-native start
@@ -29,6 +29,9 @@ ou
 - React Native
 - TypeScript
 - Android Studio
+
+
+## PreView
 
 <div align="center">
 <img width=400 src="https://user-images.githubusercontent.com/81385265/198068260-bcf06b8b-eefc-411e-856a-b7194c719aaa.png" />
